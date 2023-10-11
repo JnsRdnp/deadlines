@@ -91,7 +91,18 @@ input{
 }
 
 /* #assignments{
-    padding: 2%;
+    padding: 2%; 
     font-size: 100%;
     width: auto;
 } */
+
+#courseForm{
+    background-color: darkgray;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    margin: 30px;
+
+    gap: 5px;
+
+}

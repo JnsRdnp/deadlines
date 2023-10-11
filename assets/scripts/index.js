@@ -26,7 +26,7 @@ class Course {
 
         this._htmlTemplate = `
         <div class="course">
-            <h2>Javascript</h2>
+            <h2>Course</h2>
 
             <div class="innercont">
                 <div class="start">start 10/10/2023</div>
