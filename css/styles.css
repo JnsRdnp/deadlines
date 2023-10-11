@@ -7,6 +7,8 @@ body{
     overflow-x:hidden;
     align-items: center;
 
+    font-family: "Courier New", Courier, monospace;
+
 }
 
 .container{
@@ -23,9 +25,23 @@ body{
 
     border-radius: 10px;
 
-    font-family: "Courier New", Courier, monospace;
+}
+
+
+.course{
+    display: flex;
+    flex-direction: row;
+    font-size: auto;
+    background-color: bisque;
+    /* margin-top: 10; */
+    /* margin-bottom: 10; */
+    border-radius: 10px;
+    gap: 30px;
+
+    width: 90%;
+
     font-size: 22px;
-    letter-spacing: -4px;
+    letter-spacing: -3px;
     word-spacing: 0px;
     color: #000000;
     text-decoration: none solid rgb(68, 68, 68);
@@ -33,29 +49,66 @@ body{
     font-variant: normal;
     text-transform: uppercase;
 
+    align-items: center;
+
+    overflow: auto;
+
 }
 
-
-.course{
-    display: flex;
-    flex-direction: row;
-    font-size: 200%;
-    background-color: bisque;
-    /* margin-top: 10; */
-    /* margin-bottom: 10; */
-    border-radius: 10px;
-    gap: 100px;
-
-    width: 90%;
-}
-
-header{
+h1{
     font-family: "Courier New", Courier, monospace;
     font-weight: 500;
-    font-size: 500%;
+    font-size: 50px;
+    width: auto;
     margin-bottom: 50;
 }
 
-input{
+h2{
+    font-weight: 500;
+    align-items: center;
 
+}
+
+.innercont{
+
+    padding: auto;
+    /* overflow-x: scroll; */
+    overflow-wrap: normal;
+    display: flex;
+    flex-direction: column;
+
+}
+
+input{
+    width: auto;
+}
+
+#newCourse{
+    margin: 2%;
+    width: AUTO;
+    font-family: "Courier New", Courier, monospace;
+    font-size: 20;
+}
+
+/* #assignments{
+    padding: 2%; 
+    font-size: 100%;
+    width: auto;
+} */
+
+#courseForm{
+    background-color: darkgray;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    margin: 30px;
+
+    gap: 5px;
+
+}
+
+input{
+    padding: 5px;
+    font-size: 120%;
+    font-weight: 600;
 }

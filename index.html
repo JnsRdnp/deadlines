@@ -9,25 +9,36 @@
         <script src="assets/scripts/index.js"></script>
     </head>
     <body>
-    <header>deadlines</header>
-    <div class="container">
+    <h1>deadlines</h1>
+    <div class="container" id="courseContainer">
         <div class="course">
-            <label for="course">Course1</label>
+            <h2>Javascript</h2>
 
-            <div class="leftCont">
-                <div class="start">start</label> <input type="date" name="start"></div>
-                <div class="end">end</label> <input type="date" name="end"></div>
+            <div class="innercont">
+                <div class="start">start 10/10/2023</div>
+                <div class="end">end 10/10/2023</div>
             </div>
 
-            <div class="rightCont">
-                <div class="assignments">Assignments: <input type="number" name="assignments"></div>
+            <div class="innercont"> 
+                <div class="assignments">Assignments: 50</div>
                 <div class="shouldbedone">Should be done: 50</div>
                 <div class="perday">(2.5/a day)</div>
             </div>
 
         </div>
-        <div class="course">course 2</div>
+
     </div>
+    
+    <form action="" id="courseForm" method="GET">
+        <label for="inputName">Course name</label><input type="text" id="inputName" name="inputName">
+        <label for="inputAssignments">How many assigments?</label><input type="number" id="inputAssignments">
+        <label for="startDateInput">Starting date</label><input type="date" id="startDateInput">
+        <label for="endDateInput">Ending date</label><input type="date" id="endDateInput">
+
+        <input type="submit" id="submitInput" value="ADD COURSE" onClick="testResults(this.form)">
+    </form>
+
+    <!-- <button id="newCourse">+</button> -->
 
     </body>
-</html>>
+</html>
