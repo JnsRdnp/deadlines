@@ -3,32 +3,26 @@
 document.addEventListener("DOMContentLoaded", (event) => {
     console.log("DOM fully loaded and parsed");
 
-    javaCourse = new Course(document);
-    javaCourse.setCourseName("Javascript");
-    javaCourse.setAssignments(87)
+    // javaCourse = new Course(document);
+    // javaCourse.setCourseName("Javascript");
+    // javaCourse.setAssignments(87)
 
-    javaCourse.setEndDate("2001-10-10");
-    javaCourse.setStartDate("2002-5-10");
-    console.log(javaCourse.getEndDate);
-    console.log(javaCourse.getStartDate);
-    console.log(javaCourse.getToday);
-    console.log(javaCourse.getName);
-    console.log(javaCourse.getAssignments);
-  });
+    // javaCourse.setEndDate("2001-10-10");
+    // javaCourse.setStartDate("2002-5-10");
+    // console.log(javaCourse.getEndDate);
+    // console.log(javaCourse.getStartDate);
+    // console.log(javaCourse.getToday);
+    // console.log(javaCourse.getName);
+    // console.log(javaCourse.getAssignments);
 
-  document.addEventListener("DOMContentLoaded", function () {
-    const courseTemplate = document.querySelector(".course");
-    const addCourseButton = document.getElementById("addCourse");
-    const coursesContainer = document.getElementById("courses");
-  
-    addCourseButton.addEventListener("click", function () {
-      const newCourse = courseTemplate.cloneNode(true);
-      newCourse.style.display = "block"; // Display the new course
-  
-      // Add it to the courses container
-      coursesContainer.appendChild(newCourse);
+
+    var button = document.getElementById("newCourse");
+    button.addEventListener("click", function(event){
+        console.log("Button!");
     });
   });
+
+
 
 class Course {
 
