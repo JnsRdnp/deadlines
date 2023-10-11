@@ -1,0 +1,61 @@
+
+
+body{
+    display: flex;
+    flex-direction: column;
+    background-color: darkslateblue;
+    overflow-x:hidden;
+    align-items: center;
+
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    background-color: darkgray;
+    position: static;
+
+    width: 50%;
+
+    align-items: center;
+
+    gap: 33px;
+
+    border-radius: 10px;
+
+    font-family: "Courier New", Courier, monospace;
+    font-size: 22px;
+    letter-spacing: -4px;
+    word-spacing: 0px;
+    color: #000000;
+    text-decoration: none solid rgb(68, 68, 68);
+    font-style: normal;
+    font-variant: normal;
+    text-transform: uppercase;
+
+}
+
+
+.course{
+    display: flex;
+    flex-direction: row;
+    font-size: 200%;
+    background-color: bisque;
+    /* margin-top: 10; */
+    /* margin-bottom: 10; */
+    border-radius: 10px;
+    gap: 100px;
+
+    width: 90%;
+}
+
+header{
+    font-family: "Courier New", Courier, monospace;
+    font-weight: 500;
+    font-size: 500%;
+    margin-bottom: 50;
+}
+
+input{
+
+}
