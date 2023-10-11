@@ -4,17 +4,6 @@ document.addEventListener("DOMContentLoaded", (event) => {
     console.log("DOM fully loaded and parsed");
 
     javaCourse = new Course(document);
-    // javaCourse.setCourseName("Javascript");
-    // javaCourse.setAssignments(87)
-
-    // javaCourse.setEndDate("2001-10-10");
-    // javaCourse.setStartDate("2002-5-10");
-    // console.log(javaCourse.getEndDate);
-    // console.log(javaCourse.getStartDate);
-    // console.log(javaCourse.getToday);
-    // console.log(javaCourse.getName);
-    // console.log(javaCourse.getAssignments);
-
 
     var button = document.getElementById("newCourse");
     button.addEventListener("click", function(event){
@@ -35,20 +24,23 @@ class Course {
 
         this._assignments = 0;
 
-        this._htmlTemplate = 
-        `<div class="course">
-          <label for="course">Course1</label>
-          <div class="innercont">
-            <div class="start">start <br> <input type="date" name="start">
+        this._htmlTemplate = `
+        <div class="course">
+            <h2>Javascript</h2>
+
+            <div class="innercont">
+                <div class="start">start 10/10/2023</div>
+                <div class="end">end 10/10/2023</div>
             </div>
-            <div class="end">end <br><input type="date" name="end"></div>
-          </div>
-          <div class="innercont"> 
-            <div class="assignments">Assignments: <br> <input type="number" name="assignments"></div>
-            <div class="shouldbedone">Should be done: 50</div>
-            <div class="perday">(2.5/a day)</div>
-          </div>
-        </div>`;
+
+            <div class="innercont"> 
+                <div class="assignments">Assignments: 50</div>
+                <div class="shouldbedone">Should be done: 50</div>
+                <div class="perday">(2.5/a day)</div>
+            </div>
+
+        </div>
+        `;
 
         this.createHtmlElement();
 
