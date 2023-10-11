@@ -3,7 +3,7 @@
 document.addEventListener("DOMContentLoaded", (event) => {
     console.log("DOM fully loaded and parsed");
 
-    // javaCourse = new Course(document);
+    javaCourse = new Course(document);
     // javaCourse.setCourseName("Javascript");
     // javaCourse.setAssignments(87)
 
@@ -34,6 +34,24 @@ class Course {
         this._document = document;
 
         this._assignments = 0;
+
+        this._htmlTemplate = 
+        `<div class="course">
+          <label for="course">Course1</label>
+          <div class="innercont">
+            <div class="start">start <br> <input type="date" name="start">
+            </div>
+            <div class="end">end <br><input type="date" name="end"></div>
+          </div>
+          <div class="innercont"> 
+            <div class="assignments">Assignments: <br> <input type="number" name="assignments"></div>
+            <div class="shouldbedone">Should be done: 50</div>
+            <div class="perday">(2.5/a day)</div>
+          </div>
+        </div>`;
+
+        this.createHtmlElement();
+
     }
 
     setCourseName(name){
@@ -82,9 +100,12 @@ class Course {
         var dateWithoutTime = month + '/' + day + '/'+ year;
         return dateWithoutTime;
       }
-
+    
     createHtmlElement(){
+        var courseContainer = document.getElementById("courseContainer");
+        courseContainer.insertAdjacentHTML('beforeend',this._htmlTemplate);
 
     }
+
 }
 
