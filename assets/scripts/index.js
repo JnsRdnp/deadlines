@@ -7,8 +7,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
     console.log(javaCourse.getEndDate);
     console.log(javaCourse.getStartDate);
     console.log(javaCourse.getToday);
-    javaCourse.setStartDate("2001-10-10");
-    console.log(javaCourse.getStartDate);
+
 
   });
 
@@ -26,6 +25,11 @@ class Course {
     setStartDate(newStartDate){
         // this.startDate = new Date(newStartDate)
         this.startDate = new Date(newStartDate);
+    }
+
+    setEndDate(newEndDate){
+        // this.startDate = new Date(newStartDate)
+        this.endDate = new Date(newEndDate);
     }
 
     get getStartDate(){

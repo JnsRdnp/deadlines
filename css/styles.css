@@ -23,9 +23,24 @@ body{
 
     border-radius: 10px;
 
+}
+
+
+.course{
+    display: flex;
+    flex-direction: row;
+    font-size: auto;
+    background-color: bisque;
+    /* margin-top: 10; */
+    /* margin-bottom: 10; */
+    border-radius: 10px;
+    gap: 30px;
+
+    width: 90%;
+
     font-family: "Courier New", Courier, monospace;
     font-size: 22px;
-    letter-spacing: -4px;
+    letter-spacing: -3px;
     word-spacing: 0px;
     color: #000000;
     text-decoration: none solid rgb(68, 68, 68);
@@ -35,20 +50,6 @@ body{
 
 }
 
-
-.course{
-    display: flex;
-    flex-direction: row;
-    font-size: 200%;
-    background-color: bisque;
-    /* margin-top: 10; */
-    /* margin-bottom: 10; */
-    border-radius: 10px;
-    gap: 100px;
-
-    width: 90%;
-}
-
 header{
     font-family: "Courier New", Courier, monospace;
     font-weight: 500;
@@ -56,6 +57,13 @@ header{
     margin-bottom: 50;
 }
 
-input{
+.innercont{
+    width: auto;
+    overflow: scroll;
+    display: flex;
+    flex-direction: column;
+}
 
+input{
+    width: auto;
 }
