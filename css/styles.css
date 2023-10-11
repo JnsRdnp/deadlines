@@ -1,0 +1,45 @@
+
+
+body{
+    display: flex;
+    flex-direction: column;
+    background-color: darkslateblue;
+    overflow-x:hidden;
+    align-items: center;
+
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    background-color: darkgray;
+    position: static;
+
+    width: 50%;
+
+    align-items: center;
+
+    gap: 10px;
+
+    border-radius: 10px;
+
+
+}
+
+
+.course{
+    display: flex;
+    flex-direction: row;
+    font-size: 200%;
+    background-color: bisque;
+    /* margin-top: 10; */
+    /* margin-bottom: 10; */
+    border-radius: 10px;
+    gap: 100px;
+}
+
+header{
+    font-weight: 500;
+    font-size: 500%;
+    margin-bottom: 50;
+}
