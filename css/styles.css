@@ -106,3 +106,9 @@ input{
     gap: 5px;
 
 }
+
+input{
+    padding: 5px;
+    font-size: 120%;
+    font-weight: 600;
+}

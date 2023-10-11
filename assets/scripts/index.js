@@ -5,12 +5,16 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
     javaCourse = new Course(document);
 
-    var button = document.getElementById("newCourse");
-    button.addEventListener("click", function(event){
-        console.log("Button!");
-    });
+    // var button = document.getElementById("newCourse");
+    // button.addEventListener("click", function(event){
+    //     console.log("Button!");
+    // });
   });
 
+function testResults (form) {
+    var inputValue = form.inputName.value;
+    alert ("You typed: " + inputValue);
+}
 
 
 class Course {
