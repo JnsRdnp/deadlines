@@ -7,6 +7,8 @@ body{
     overflow-x:hidden;
     align-items: center;
 
+    font-family: "Courier New", Courier, monospace;
+
 }
 
 .container{
@@ -38,7 +40,6 @@ body{
 
     width: 90%;
 
-    font-family: "Courier New", Courier, monospace;
     font-size: 22px;
     letter-spacing: -3px;
     word-spacing: 0px;
@@ -61,11 +62,19 @@ header{
 .innercont{
 
     padding: auto;
-    overflow-x: scroll;
+    /* overflow-x: scroll; */
+    overflow-wrap: normal;
     display: flex;
     flex-direction: column;
 }
 
 input{
     width: auto;
+}
+
+#newCourse{
+    margin: 5%;
+    width: 100;
+    font-family: "Courier New", Courier, monospace;
+    font-size: 20;
 }

@@ -16,7 +16,19 @@ document.addEventListener("DOMContentLoaded", (event) => {
     console.log(javaCourse.getAssignments);
   });
 
-
+  document.addEventListener("DOMContentLoaded", function () {
+    const courseTemplate = document.querySelector(".course");
+    const addCourseButton = document.getElementById("addCourse");
+    const coursesContainer = document.getElementById("courses");
+  
+    addCourseButton.addEventListener("click", function () {
+      const newCourse = courseTemplate.cloneNode(true);
+      newCourse.style.display = "block"; // Display the new course
+  
+      // Add it to the courses container
+      coursesContainer.appendChild(newCourse);
+    });
+  });
 
 class Course {
 
