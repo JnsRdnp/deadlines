@@ -19,10 +19,19 @@ body{
 
     align-items: center;
 
-    gap: 10px;
+    gap: 33px;
 
     border-radius: 10px;
 
+    font-family: "Courier New", Courier, monospace;
+    font-size: 22px;
+    letter-spacing: -4px;
+    word-spacing: 0px;
+    color: #000000;
+    text-decoration: none solid rgb(68, 68, 68);
+    font-style: normal;
+    font-variant: normal;
+    text-transform: uppercase;
 
 }
 
@@ -36,9 +45,12 @@ body{
     /* margin-bottom: 10; */
     border-radius: 10px;
     gap: 100px;
+
+    width: 90%;
 }
 
 header{
+    font-family: "Courier New", Courier, monospace;
     font-weight: 500;
     font-size: 500%;
     margin-bottom: 50;
