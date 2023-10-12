@@ -54,7 +54,7 @@ class Course {
         var year = currentDate.getFullYear();
         var month = currentDate.getMonth() + 1; // Month index starts from 0
         var day = currentDate.getDate();
-        var dateWithoutTime = month + '/' + day + '/'+ year;
+        var dateWithoutTime = day + '/' + month + '/'+ year;
         return dateWithoutTime;
       }
 
@@ -101,9 +101,6 @@ class Course {
             <div class="innercont">
                 <div class="start">start ${this.getStartDate()}</div>
                 <div class="end">end ${this.getEndDate()}</div>
-            </div>
-
-            <div class="innercont"> 
                 <div class="assignments">Assignments: ${this._assignments}</div>
                 <div class="shouldbedone">Should be done: ${this.getShouldBeDone()}</div>
                 <div class="perday">(${this.getPerDay()}/a day)</div>
