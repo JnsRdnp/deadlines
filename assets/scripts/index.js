@@ -34,6 +34,8 @@ document.addEventListener("DOMContentLoaded", (event) => {
         var course = new Course(courseName,parseInt(courseAssignments, 10),courseStartDate,courseEndDate);
         course.createHtmlElement();
         courseList.push(course);
+
+        document.querySelector("#courseForm").reset();
     });
   });
 
