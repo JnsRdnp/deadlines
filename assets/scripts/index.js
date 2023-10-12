@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
     //Example course
     courseList = [];
     exampleCourse = new Course("Example course",30,"2023-08-21","2023-10-15");
-    exampleCourse.createHtmlElement();
+    // exampleCourse.createHtmlElement();
     courseList.push(exampleCourse);
     
     //handle new course object creation
@@ -37,6 +37,12 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
         document.querySelector("#courseForm").reset();
     });
+
+    courseList.forEach((course) => {
+
+        course.createHtmlElement();
+      });
+
   });
 
 
