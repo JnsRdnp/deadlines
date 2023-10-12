@@ -12,8 +12,12 @@ document.addEventListener("DOMContentLoaded", (event) => {
   });
 
 function testResults (form) {
-    var inputValue = form.inputName.value;
-    alert ("You typed: " + inputValue);
+    var courseName = form.inputName.value;
+    var courseAssignments = form.inputAssignments.value;
+    var courseStartDate = form.startDateInput.value;
+    var courseEndDate = form.endDateInput.value;
+    alert(courseEndDate);
+    
 }
 
 
