@@ -5,7 +5,6 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
     const header = document.querySelector('#deadlinesHeader');
 
-
     //add date to site header
     currentDate = new Date();
     var year = currentDate.getFullYear();
@@ -13,9 +12,14 @@ document.addEventListener("DOMContentLoaded", (event) => {
     var day = currentDate.getDate();
     var dateWithoutTime = month + '/' + day + '/'+ year
     header.insertAdjacentHTML('beforeend',' '+dateWithoutTime);
+
+    //Example course
+    courseList = [];
+    exampleCourse = new Course("Example course",51,"2023-10-10","2023-01-01");
+    exampleCourse.createHtmlElement();
+    courseList.push(exampleCourse);
     
     //handle new course object creation
-    courseList = [];
     const form = document.querySelector("#courseForm");
     form.addEventListener("submit", function (event) {
         //prevent the dissappearing
