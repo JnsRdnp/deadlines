@@ -1,5 +1,7 @@
 import Course from './Course.js';
 
+var courseList = [];
+
 document.addEventListener("DOMContentLoaded", (event) => {
     console.log("DOM fully loaded and parsed");
 
@@ -14,10 +16,9 @@ document.addEventListener("DOMContentLoaded", (event) => {
     header.insertAdjacentHTML('beforeend',' '+dateWithoutTime);
 
     //Example course
-    var courseList = [];
-    var exampleCourse = new Course("Example course",30,"2023-08-21","2023-10-15");
+    var course = new Course("Example course",25,"2023-08-21","2023-10-15");
     // exampleCourse.createHtmlElement();
-    courseList.push(exampleCourse);
+    courseList.push(course);
     
     //handle new course object creation
     const form = document.querySelector("#courseForm");
@@ -36,6 +37,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
         courseList.push(course);
 
         //clear form
+        console.log(courseList);
         document.querySelector("#courseForm").reset();
     });
     
@@ -43,10 +45,28 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
         course.createHtmlElement();
     });
+
+
+    // Handle removing courses
+    document.getElementById("courseContainer").addEventListener("click", function (event) {
+        if (event.target.classList.contains("remove")) {
+            // Get the parent course element
+            const courseElement = event.target.closest(".course");
+            if (courseElement) {
+                const courseId = courseElement.id;
+                console.log("Deleted course with ID: " + courseId);
+    
+                const indexToRemove = courseList.findIndex(course => course._name === courseId);
+                
+                if (indexToRemove !== -1) {
+                    courseList.splice(indexToRemove, 1);
+                    courseElement.remove();
+                    console.log(courseList);
+                }
+            }
+        }
+    });
   
   });
-
-
-
 
 
