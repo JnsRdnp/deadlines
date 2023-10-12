@@ -3,7 +3,7 @@
 document.addEventListener("DOMContentLoaded", (event) => {
     console.log("DOM fully loaded and parsed");
 
-    javaCourse = new Course(document);
+    //javaCourse = new Course();
 
     // var button = document.getElementById("newCourse");
     // button.addEventListener("click", function(event){
@@ -11,24 +11,29 @@ document.addEventListener("DOMContentLoaded", (event) => {
     // });
   });
 
+var courseList = [];
+
 function testResults (form) {
     var courseName = form.inputName.value;
     var courseAssignments = form.inputAssignments.value;
     var courseStartDate = form.startDateInput.value;
     var courseEndDate = form.endDateInput.value;
-    alert(courseEndDate);
-    
+    // alert(courseEndDate);
+
+    var course = new Course(courseName);
+
+    //courseList.push(course);
 }
 
 
 class Course {
 
-    constructor(document) {
-        this._name = "Course";
+    constructor(name) {
+        this._name = name;
         this._startDate = new Date();
         this._endDate = new Date();
         this._today = new Date();
-        this._document = document;
+
 
         this._assignments = 0;
 
