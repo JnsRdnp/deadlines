@@ -3,8 +3,19 @@
 document.addEventListener("DOMContentLoaded", (event) => {
     console.log("DOM fully loaded and parsed");
 
-    courseList = [];
+    const header = document.querySelector('#deadlinesHeader');
+
+
+    //add date to site header
+    currentDate = new Date();
+    var year = currentDate.getFullYear();
+    var month = currentDate.getMonth() + 1; // Month index starts from 0
+    var day = currentDate.getDate();
+    var dateWithoutTime = month + '/' + day + '/'+ year
+    header.insertAdjacentHTML('beforeend',' '+dateWithoutTime);
     
+    //handle new course object creation
+    courseList = [];
     const form = document.querySelector("#courseForm");
     form.addEventListener("submit", function (event) {
         //prevent the dissappearing
@@ -20,6 +31,8 @@ document.addEventListener("DOMContentLoaded", (event) => {
         course.createHtmlElement();
         courseList.push(course);
     });
+
+
 
 
   });
@@ -90,7 +103,7 @@ class Course {
     
     createHtmlElement(){
         this._htmlTemplate = `
-        <div class="course">
+        <div class="course" id="${this._name}">
             <h2>${this._name}</h2>
 
             <div class="innercont">
