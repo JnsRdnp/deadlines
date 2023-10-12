@@ -112,3 +112,11 @@ input{
     font-size: 120%;
     font-weight: 600;
 }
+
+.remove{
+    padding: 10px;
+    font-weight: 600;
+    position: absolute;
+    right:29%;
+
+}
