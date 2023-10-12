@@ -3,6 +3,7 @@
 document.addEventListener("DOMContentLoaded", (event) => {
     console.log("DOM fully loaded and parsed");
 
+    courseList = [];
     
     const form = document.querySelector("#courseForm");
     form.addEventListener("submit", function (event) {
@@ -14,10 +15,10 @@ document.addEventListener("DOMContentLoaded", (event) => {
         var courseStartDate = form.startDateInput.value;
         var courseEndDate = form.endDateInput.value;
 
-        console.log(courseName);
-        console.log(courseAssignments);
         console.log(courseStartDate);
-        console.log(courseEndDate);
+        var course = new Course(courseName,parseInt(courseAssignments, 10),courseStartDate,courseEndDate);
+
+        courseList.push(course);
         
     });
 
@@ -25,36 +26,23 @@ document.addEventListener("DOMContentLoaded", (event) => {
   });
 
 
-// function testResults (form) {
-//     var courseName = form.inputName.value;
-//     var courseAssignments = form.inputAssignments.value;
-//     var courseStartDate = form.startDateInput.value;
-//     var courseEndDate = form.endDateInput.value;
-//     // alert(courseEndDate);
-
-//     var course = new Course("lessgo");
-
-
-
-//     //courseList.push(course);
-// }
 
 
 
 class Course {
 
-    constructor(name) {
+    constructor(name,assignments,startdate,enddate) {
         this._name = name;
-        this._startDate = new Date();
-        this._endDate = new Date();
+        this._startDate = new Date(startdate);
+        this._endDate = new Date(enddate);
         this._today = new Date();
 
 
-        this._assignments = 0;
+        this._assignments = assignments;
 
         this._htmlTemplate = `
         <div class="course">
-            <h2>Course</h2>
+            <h2>${this._name}</h2>
 
             <div class="innercont">
                 <div class="start">start 10/10/2023</div>
@@ -62,7 +50,7 @@ class Course {
             </div>
 
             <div class="innercont"> 
-                <div class="assignments">Assignments: 50</div>
+                <div class="assignments">Assignments: ${this._assignments}</div>
                 <div class="shouldbedone">Should be done: 50</div>
                 <div class="perday">(2.5/a day)</div>
             </div>
