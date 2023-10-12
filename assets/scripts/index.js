@@ -17,9 +17,8 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
         console.log(courseStartDate);
         var course = new Course(courseName,parseInt(courseAssignments, 10),courseStartDate,courseEndDate);
-
+        course.createHtmlElement();
         courseList.push(course);
-        
     });
 
 
@@ -39,26 +38,6 @@ class Course {
 
 
         this._assignments = assignments;
-
-        this._htmlTemplate = `
-        <div class="course">
-            <h2>${this._name}</h2>
-
-            <div class="innercont">
-                <div class="start">start 10/10/2023</div>
-                <div class="end">end 10/10/2023</div>
-            </div>
-
-            <div class="innercont"> 
-                <div class="assignments">Assignments: ${this._assignments}</div>
-                <div class="shouldbedone">Should be done: 50</div>
-                <div class="perday">(2.5/a day)</div>
-            </div>
-
-        </div>
-        `;
-
-        this.createHtmlElement();
 
     }
 
@@ -110,6 +89,23 @@ class Course {
       }
     
     createHtmlElement(){
+        this._htmlTemplate = `
+        <div class="course">
+            <h2>${this._name}</h2>
+
+            <div class="innercont">
+                <div class="start">start ${this.getStartDate()}</div>
+                <div class="end">end ${this.getEndDate()}</div>
+            </div>
+
+            <div class="innercont"> 
+                <div class="assignments">Assignments: ${this._assignments}</div>
+                <div class="shouldbedone">Should be done: 50</div>
+                <div class="perday">(2.5/a day)</div>
+            </div>
+
+        </div>
+        `;
         var courseContainer = document.getElementById("courseContainer");
         courseContainer.insertAdjacentHTML('beforeend',this._htmlTemplate);
 
