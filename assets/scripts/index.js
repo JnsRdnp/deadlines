@@ -3,27 +3,42 @@
 document.addEventListener("DOMContentLoaded", (event) => {
     console.log("DOM fully loaded and parsed");
 
-    //javaCourse = new Course();
+    
+    const form = document.querySelector("#courseForm");
+    form.addEventListener("submit", function (event) {
+        //prevent the dissappearing
+        event.preventDefault();
 
-    // var button = document.getElementById("newCourse");
-    // button.addEventListener("click", function(event){
-    //     console.log("Button!");
-    // });
+        var courseName = form.inputName.value;
+        var courseAssignments = form.inputAssignments.value;
+        var courseStartDate = form.startDateInput.value;
+        var courseEndDate = form.endDateInput.value;
+
+        console.log(courseName);
+        console.log(courseAssignments);
+        console.log(courseStartDate);
+        console.log(courseEndDate);
+        
+    });
+
+
   });
 
-var courseList = [];
 
-function testResults (form) {
-    var courseName = form.inputName.value;
-    var courseAssignments = form.inputAssignments.value;
-    var courseStartDate = form.startDateInput.value;
-    var courseEndDate = form.endDateInput.value;
-    // alert(courseEndDate);
+// function testResults (form) {
+//     var courseName = form.inputName.value;
+//     var courseAssignments = form.inputAssignments.value;
+//     var courseStartDate = form.startDateInput.value;
+//     var courseEndDate = form.endDateInput.value;
+//     // alert(courseEndDate);
 
-    var course = new Course(courseName);
+//     var course = new Course("lessgo");
 
-    //courseList.push(course);
-}
+
+
+//     //courseList.push(course);
+// }
+
 
 
 class Course {
@@ -77,23 +92,23 @@ class Course {
         this._endDate = new Date(newEndDate);
     }
 
-    get getName(){
+    getName(){
         return this._name;
     }
 
-    get getAssignments(){
+    getAssignments(){
         return this._assignments;
     }
 
-    get getStartDate(){
+    getStartDate(){
         return this.getSimpleDate(this._startDate);
     }
 
-    get getEndDate(){
+    getEndDate(){
         return this.getSimpleDate(this._endDate);
     }
 
-    get getToday(){
+    getToday(){
         return this.getSimpleDate(this._today);
     }
 
