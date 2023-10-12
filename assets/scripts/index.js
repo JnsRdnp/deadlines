@@ -1,4 +1,6 @@
+import Course from './Course.js';
 
+var courseList = [];
 
 document.addEventListener("DOMContentLoaded", (event) => {
     console.log("DOM fully loaded and parsed");
@@ -6,18 +8,17 @@ document.addEventListener("DOMContentLoaded", (event) => {
     const header = document.querySelector('#deadlinesHeader');
 
     //add date to site header
-    currentDate = new Date();
+    var currentDate = new Date();
     var year = currentDate.getFullYear();
     var month = currentDate.getMonth() + 1; // Month index starts from 0
     var day = currentDate.getDate();
-    var dateWithoutTime = month + '/' + day + '/'+ year
+    var dateWithoutTime = day + '/' + month + '/'+ year
     header.insertAdjacentHTML('beforeend',' '+dateWithoutTime);
 
     //Example course
-    courseList = [];
-    exampleCourse = new Course("Example course",51,"2023-10-10","2023-01-01");
-    exampleCourse.createHtmlElement();
-    courseList.push(exampleCourse);
+    var course = new Course("Example course",25,"2023-08-21","2023-10-15");
+    // exampleCourse.createHtmlElement();
+    courseList.push(course);
     
     //handle new course object creation
     const form = document.querySelector("#courseForm");
@@ -34,99 +35,38 @@ document.addEventListener("DOMContentLoaded", (event) => {
         var course = new Course(courseName,parseInt(courseAssignments, 10),courseStartDate,courseEndDate);
         course.createHtmlElement();
         courseList.push(course);
+
+        //clear form
+        console.log(courseList);
+        document.querySelector("#courseForm").reset();
+    });
+    
+    courseList.forEach((course) => {
+
+        course.createHtmlElement();
     });
 
 
-
-
+    // Handle removing courses
+    document.getElementById("courseContainer").addEventListener("click", function (event) {
+        if (event.target.classList.contains("remove")) {
+            // Get the parent course element
+            const courseElement = event.target.closest(".course");
+            if (courseElement) {
+                const courseId = courseElement.id;
+                console.log("Deleted course with ID: " + courseId);
+    
+                const indexToRemove = courseList.findIndex(course => course._name === courseId);
+                
+                if (indexToRemove !== -1) {
+                    courseList.splice(indexToRemove, 1);
+                    courseElement.remove();
+                    console.log(courseList);
+                }
+            }
+        }
+    });
+  
   });
 
-
-
-
-
-class Course {
-
-    constructor(name,assignments,startdate,enddate) {
-        this._name = name;
-        this._startDate = new Date(startdate);
-        this._endDate = new Date(enddate);
-        this._today = new Date();
-
-
-        this._assignments = assignments;
-
-    }
-
-    setCourseName(name){
-        this._name = name;
-    }
-
-    setAssignments(assignments){
-        this._assignments = assignments;
-    }
-
-    setStartDate(newStartDate){
-        // this.startDate = new Date(newStartDate)
-        this._startDate = new Date(newStartDate);
-    }
-
-    setEndDate(newEndDate){
-        // this.startDate = new Date(newStartDate)
-        this._endDate = new Date(newEndDate);
-    }
-
-    getName(){
-        return this._name;
-    }
-
-    getAssignments(){
-        return this._assignments;
-    }
-
-    getStartDate(){
-        return this.getSimpleDate(this._startDate);
-    }
-
-    getEndDate(){
-        return this.getSimpleDate(this._endDate);
-    }
-
-    getToday(){
-        return this.getSimpleDate(this._today);
-    }
-
-    getSimpleDate(inputDate) {
-        var currentDate = inputDate;
-        var year = currentDate.getFullYear();
-        var month = currentDate.getMonth() + 1; // Month index starts from 0
-        var day = currentDate.getDate();
-        var dateWithoutTime = month + '/' + day + '/'+ year;
-        return dateWithoutTime;
-      }
-    
-    createHtmlElement(){
-        this._htmlTemplate = `
-        <div class="course" id="${this._name}">
-            <h2>${this._name}</h2>
-
-            <div class="innercont">
-                <div class="start">start ${this.getStartDate()}</div>
-                <div class="end">end ${this.getEndDate()}</div>
-            </div>
-
-            <div class="innercont"> 
-                <div class="assignments">Assignments: ${this._assignments}</div>
-                <div class="shouldbedone">Should be done: 50</div>
-                <div class="perday">(2.5/a day)</div>
-            </div>
-
-        </div>
-        `;
-        var courseContainer = document.getElementById("courseContainer");
-        courseContainer.insertAdjacentHTML('beforeend',this._htmlTemplate);
-
-    }
-
-}
 
