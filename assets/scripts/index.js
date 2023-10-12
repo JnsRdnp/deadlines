@@ -35,14 +35,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
         course.createHtmlElement();
         courseList.push(course);
     });
-
-
-
-
   });
-
-
-
 
 
 class Course {
@@ -104,6 +97,21 @@ class Course {
         var dateWithoutTime = month + '/' + day + '/'+ year;
         return dateWithoutTime;
       }
+
+    getOriginalDays(){
+        console.log(this.dateDiffInDays(this._startDate,this._endDate));
+    }
+
+    //calculate day difference between dates https://stackoverflow.com/questions/3224834/get-difference-between-2-dates-in-javascript
+    dateDiffInDays(a, b) {
+        
+        const _MS_PER_DAY = 1000 * 60 * 60 * 24;
+        // Discard the time and time-zone information.
+        const utc1 = Date.UTC(a.getFullYear(), a.getMonth(), a.getDate());
+        const utc2 = Date.UTC(b.getFullYear(), b.getMonth(), b.getDate());
+      
+        return Math.floor((utc2 - utc1) / _MS_PER_DAY);
+    }
     
     createHtmlElement(){
         this._htmlTemplate = `
