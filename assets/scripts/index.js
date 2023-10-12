@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
     //Example course
     courseList = [];
-    exampleCourse = new Course("Example course",51,"2023-10-10","2023-01-01");
+    exampleCourse = new Course("Example course",30,"2023-08-21","2023-10-15");
     exampleCourse.createHtmlElement();
     courseList.push(exampleCourse);
     
@@ -99,7 +99,26 @@ class Course {
       }
 
     getOriginalDays(){
-        console.log(this.dateDiffInDays(this._startDate,this._endDate));
+        return (this.dateDiffInDays(this._startDate,this._endDate));
+    }
+
+    getPassedDays(){
+        return (this.dateDiffInDays(this._startDate,this._today));
+    }
+
+
+    getPerDay(){
+        var assignments = this.getAssignments();
+        var originalDays = this.getOriginalDays();
+        var perday = assignments/originalDays; 
+        var roundedPerday = perday.toFixed(1);
+        return roundedPerday;
+    }
+
+    getShouldBeDone(){
+        var passed = this.getPassedDays();
+        var perday = this.getPerDay();
+        return (passed*perday).toFixed(1);
     }
 
     //calculate day difference between dates https://stackoverflow.com/questions/3224834/get-difference-between-2-dates-in-javascript
@@ -125,8 +144,8 @@ class Course {
 
             <div class="innercont"> 
                 <div class="assignments">Assignments: ${this._assignments}</div>
-                <div class="shouldbedone">Should be done: 50</div>
-                <div class="perday">(2.5/a day)</div>
+                <div class="shouldbedone">Should be done: ${this.getShouldBeDone()}</div>
+                <div class="perday">(${this.getPerDay()}/a day)</div>
             </div>
 
         </div>
