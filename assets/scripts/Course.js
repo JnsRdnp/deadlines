@@ -54,7 +54,7 @@ class Course {
         var year = currentDate.getFullYear();
         var month = currentDate.getMonth() + 1; // Month index starts from 0
         var day = currentDate.getDate();
-        var dateWithoutTime = day + '/' + month + '/'+ year;
+        var dateWithoutTime = day + '.' + month;
         return dateWithoutTime;
       }
 
@@ -71,8 +71,7 @@ class Course {
         var assignments = this.getAssignments();
         var originalDays = this.getOriginalDays();
         var perday = assignments/originalDays; 
-        var roundedPerday = perday.toFixed(1);
-        return roundedPerday;
+        return perday;
     }
 
     getShouldBeDone(){
@@ -95,18 +94,19 @@ class Course {
     
     createHtmlElement(){
         this._htmlTemplate = `
-        <div class="course" id="${this._name}">
-            <h2>${this._name}</h2>
-
-            <div class="innercont">
-                <div class="start">start ${this.getStartDate()}</div>
-                <div class="end">end ${this.getEndDate()}</div>
-                <div class="assignments">Assignments: ${this._assignments}</div>
-                <div class="shouldbedone">Should be done: ${this.getShouldBeDone()}</div>
-                <div class="perday">(${this.getPerDay()}/a day)</div>
+        <div class="courseOuter" id="${this._name}">
+        <p class="coursetitle">${this._name}</p></label>
+        <button class="remove">DELETE</button>
+        
+        <div class="course">
+            <div class="days">
+                <div class="start">${this.getStartDate()}</div>
+                <img src="assets/pictures/arrowdown1.png" alt="arrowdown" class="arrowdown">
+                <div class="end">${this.getEndDate()}</div>
             </div>
-
-             <button class="remove">DELETE</button>
+            <div class="sbd"><p class="shouldp">${this.getShouldBeDone()}</p><p class="perdayp">${this.getPerDay().toFixed(1)} / DAY</p></div>
+            <div class="total"><p class="totalp">${this._assignments}</p></div>
+        </div>
         </div>
         `;
         var courseContainer = document.getElementById("courseContainer");
@@ -115,5 +115,19 @@ class Course {
     }
 
 }
+
+{/* <div class="course" id="${this._name}">
+<h2>${this._name}</h2>
+
+<div class="innerCont">
+    <div class="start">start ${this.getStartDate()}</div>
+    <div class="end">end ${this.getEndDate()}</div>
+    <div class="assignments">Assignments: ${this._assignments}</div>
+    <div class="shouldbedone">Should be done: ${this.getShouldBeDone()}</div>
+    <div class="perday">( ${(this.getPerDay()).toFixed(2)} / day )</div>
+</div>
+
+ <button class="remove">DELETE</button>
+</div> */}
 
 export default Course;
