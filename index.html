@@ -12,23 +12,20 @@
     <h1 id="deadlinesHeader">deadlines</h1>
     <div class="container" id="courseContainer">
 
-        <div class="course">
-        <h1>Javascript</h1>
-        <table id="courseTable">
-            <tr>
-              <th>Start date</th>
-              <th>End date</th>
-              <th>Assignments</th>
-            </tr>
-            <tr>
-              <td>10/10/2023</td>
-              <td>15/10/2023</td>
-              <td>53</td>
-            </tr>
-          </table>
-
+        <label for=".courseDemo" class="courselabel"><p class="coursetitle">Course</p> <button class="removeDemo">DELETE</button></label>
+        <div class="courseDemo">
+            <div class="days">
+                <div class="start">23.08</div>
+                <img src="assets/pictures/arrowdown.png" alt="arrowdown" class="arrowdown">
+                <div class="end">15.10</div>
+            </div>
         </div>
+
+        <label for=".courseDemo" class="courselabel">Course</label>
+        <div class="courseDemo">
+
     </div>   
+    </div>
     <form action="" id="courseForm" method="GET" name="thForm">
         <label for="inputName">Course name</label><input type="text" id="inputName" name="inputName">
         <label for="inputAssignments">How many assigments?</label><input type="number" id="inputAssignments">

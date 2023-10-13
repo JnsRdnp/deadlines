@@ -14,10 +14,45 @@
     animation: myAnim 2s ease 0s 1 normal forwards;
 }
 
-#courseTable{
-    float: left;
+.courseDemo{
+    background-color: #f7f7f7;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 30px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
 }
 
+.courselabel{
+    font-weight: 600;
+    font-size: large;
+}
+
+.coursetitle{
+    margin-bottom: -20px;
+    margin-left: 2%;
+}
+
+.start, .end{
+    font-size: 150%;
+}
+
+.arrowdown{
+    margin-top: 5px;
+    height: 6%;
+    opacity: 0.7;
+    margin-bottom: 5px;
+}
+
+.removedemo{
+    background-color: #e74c3c;
+    color: #fff;
+    border: none;
+    padding: 2px 10px;
+    border-radius: 5px;
+    margin-left: 88%;
+    margin-bottom:2px;
+}
 
 .REMOVE {
     background-color: #e74c3c;
