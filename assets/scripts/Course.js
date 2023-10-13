@@ -98,7 +98,7 @@ class Course {
         <p class="coursetitle">${this._name}</p></label>
         <button class="remove">DELETE</button>
         
-        <div class="courseDemo">
+        <div class="course">
             <div class="days">
                 <div class="start">${this.getStartDate()}</div>
                 <img src="assets/pictures/arrowdown1.png" alt="arrowdown" class="arrowdown">

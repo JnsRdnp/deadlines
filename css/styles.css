@@ -4,22 +4,6 @@
     border-radius: 10px;
     padding: 30px;
     margin-bottom: 20px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    
-    gap: 10px;
-
-    animation: myAnim 2s ease 0s 1 normal forwards;
-}
-
-.courseDemo{
-    background-color: #f7f7f7;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    padding: 30px;
-    margin-bottom: 20px;
     margin-top: -3%;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
 
@@ -35,6 +19,12 @@
     flex-direction: row;
     max-height: 33%;
 }
+
+.courseOuter{
+    animation: myAnim 2s ease 0s 1 normal forwards;
+}
+
+
 
 .days{
     text-align: center;
@@ -165,7 +155,7 @@ footer{
 /* animations */
 @keyframes myAnim {
 	0% {
-		transform: scale(0.85);
+		transform: scale(0.90);
 	}
 
 	100% {

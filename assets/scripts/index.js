@@ -8,12 +8,12 @@ document.addEventListener("DOMContentLoaded", (event) => {
     const header = document.querySelector('#deadlinesHeader');
 
     //add date to site header
-    var currentDate = new Date();
-    var year = currentDate.getFullYear();
-    var month = currentDate.getMonth() + 1; // Month index starts from 0
-    var day = currentDate.getDate();
-    var dateWithoutTime = day + '/' + month + '/'+ year
-    header.insertAdjacentHTML('beforeend',' '+dateWithoutTime);
+    // var currentDate = new Date();
+    // var year = currentDate.getFullYear();
+    // var month = currentDate.getMonth() + 1; // Month index starts from 0
+    // var day = currentDate.getDate();
+    // var dateWithoutTime = day + '/' + month + '/'+ year
+    // header.insertAdjacentHTML('beforeend',' '+dateWithoutTime);
 
     //Example course
     var course = new Course("Example course",10,"2023-08-21","2023-10-15");
