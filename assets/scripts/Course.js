@@ -71,8 +71,7 @@ class Course {
         var assignments = this.getAssignments();
         var originalDays = this.getOriginalDays();
         var perday = assignments/originalDays; 
-        var roundedPerday = perday.toFixed(1);
-        return roundedPerday;
+        return perday;
     }
 
     getShouldBeDone(){
@@ -98,12 +97,12 @@ class Course {
         <div class="course" id="${this._name}">
             <h2>${this._name}</h2>
 
-            <div class="innercont">
+            <div class="innerCont">
                 <div class="start">start ${this.getStartDate()}</div>
                 <div class="end">end ${this.getEndDate()}</div>
                 <div class="assignments">Assignments: ${this._assignments}</div>
                 <div class="shouldbedone">Should be done: ${this.getShouldBeDone()}</div>
-                <div class="perday">(${this.getPerDay()}/a day)</div>
+                <div class="perday">( ${(this.getPerDay()).toFixed(2)} / day )</div>
             </div>
 
              <button class="remove">DELETE</button>

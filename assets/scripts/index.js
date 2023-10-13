@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
     header.insertAdjacentHTML('beforeend',' '+dateWithoutTime);
 
     //Example course
-    var course = new Course("Example course",25,"2023-08-21","2023-10-15");
+    var course = new Course("Example course",8,"2023-08-21","2023-10-15");
     // exampleCourse.createHtmlElement();
     courseList.push(course);
     
