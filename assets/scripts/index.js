@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
     header.insertAdjacentHTML('beforeend',' '+dateWithoutTime);
 
     //Example course
-    var course = new Course("Example course",8,"2023-08-21","2023-10-15");
+    var course = new Course("Example course",10,"2023-08-21","2023-10-15");
     // exampleCourse.createHtmlElement();
     courseList.push(course);
     
@@ -51,7 +51,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
     document.getElementById("courseContainer").addEventListener("click", function (event) {
         if (event.target.classList.contains("remove")) {
             // Get the parent course element
-            const courseElement = event.target.closest(".course");
+            const courseElement = event.target.closest(".courseOuter");
             if (courseElement) {
                 const courseId = courseElement.id;
                 console.log("Deleted course with ID: " + courseId);

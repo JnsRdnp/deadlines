@@ -20,6 +20,7 @@
     border-radius: 10px;
     padding: 30px;
     margin-bottom: 20px;
+    margin-top: -3%;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
 
     font-family: "Lucida Console", Monaco, monospace;
@@ -31,7 +32,7 @@
     text-transform: none;
 
     display: flex;
-
+    flex-direction: row;
     max-height: 33%;
 }
 
@@ -39,36 +40,48 @@
     text-align: center;
     font-size:17px;
     letter-spacing: 1.4px;
-    background-color:lightcoral;
+    /* background-color:lightcoral; */
     width: 33%;
     display: flex;
     flex-direction: column;
     align-items: center;
 
-    padding-top: 3%;
+    padding-top: 5%;
     padding-bottom: 3%;
+
+    border-right: 2px solid black;
+    
 }
 
 .sbd,.total{
     font-size: 250%;
-    background-color: aquamarine;
+    /* background-color: aquamarine; */
     padding: 5%;
-    min-width: 22%;
     text-align: center;
 
     display: flex;
     flex-direction: column;
-
+}
+.sbd{
+    border-right: 2px solid black;
+    min-width: 22%;
 }
 
-.courselabel{
-    font-weight: 600;
-    font-size: large;
+.total{
+    min-width: 22%;
 }
+
+.perdayp{
+    margin-top: -20%;
+    font-size:50%;
+}
+
 
 .coursetitle{
-    margin-bottom: -20px;
+    font-weight: 800;
     margin-left: 2%;
+    font-size: 150%;
+    opacity: 0.6;
 }
 
 .start, .end{
@@ -85,7 +98,7 @@
 
 }
 
-.removedemo{
+.remove{
     background-color: #e74c3c;
     color: #fff;
     border: none;
@@ -93,16 +106,12 @@
     border-radius: 5px;
     margin-left: 88%;
     margin-bottom:2px;
+    margin-left: 85%;
+    margin-top:-5.8%;
+
+    position: relative;
 }
 
-.REMOVE {
-    background-color: #e74c3c;
-    color: #fff;
-    border: none;
-    padding: 5px 16px;
-    border-radius: 5px;
-    cursor: pointer;
-}
 
 body {
     font-family: Arial, sans-serif;
@@ -127,8 +136,8 @@ body {
     background-color: #f7f7f7;
     border: 1px solid #ccc;
     border-radius: 10px;
-    padding: 20px;
-    margin: 100px auto;
+    padding: 1%;
+    margin: 2% auto;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     width: 20%;
 }
