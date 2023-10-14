@@ -102,6 +102,11 @@
     position: relative;
 }
 
+.remove:hover{
+    scale: 1.05;
+    opacity: 0.9;
+}
+
 
 body {
     font-family: Arial, sans-serif;
@@ -119,6 +124,8 @@ body {
     background-color: #fff;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
+
+    scale:0.70;
 }
 
 #courseForm {
@@ -127,9 +134,10 @@ body {
     border: 1px solid #ccc;
     border-radius: 10px;
     padding: 1%;
-    margin: 2% auto;
+    margin: 0% auto;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     width: 20%;
+    margin-top: -2%;
 }
   #courseForm input[type="text"],
   #courseForm input[type="number"],
@@ -149,6 +157,11 @@ footer{
 .innerCont{
     font-size: 125%;
 
+}
+
+#deadlinesHeader{
+    text-align: center;
+    font-size: 110%;
 }
 
 

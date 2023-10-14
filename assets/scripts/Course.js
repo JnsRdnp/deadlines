@@ -77,7 +77,10 @@ class Course {
     getShouldBeDone(){
         var passed = this.getPassedDays();
         var perday = this.getPerDay();
-        return (passed*perday).toFixed(1);
+        if(passed>0){
+            return (passed*perday).toFixed(1);
+        }
+        return "0";
     }
 
     //calculate day difference between dates https://stackoverflow.com/questions/3224834/get-difference-between-2-dates-in-javascript
@@ -115,19 +118,5 @@ class Course {
     }
 
 }
-
-{/* <div class="course" id="${this._name}">
-<h2>${this._name}</h2>
-
-<div class="innerCont">
-    <div class="start">start ${this.getStartDate()}</div>
-    <div class="end">end ${this.getEndDate()}</div>
-    <div class="assignments">Assignments: ${this._assignments}</div>
-    <div class="shouldbedone">Should be done: ${this.getShouldBeDone()}</div>
-    <div class="perday">( ${(this.getPerDay()).toFixed(2)} / day )</div>
-</div>
-
- <button class="remove">DELETE</button>
-</div> */}
 
 export default Course;
