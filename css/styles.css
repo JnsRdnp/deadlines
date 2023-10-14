@@ -138,6 +138,7 @@ body {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     width: 20%;
     margin-top: -2%;
+    margin-bottom: 3%;
 }
   #courseForm input[type="text"],
   #courseForm input[type="number"],
