@@ -267,6 +267,25 @@ header {
 @media (max-width: 480px) {
     .container {
         max-width: 95%;
+        scale: 100%;
+        font-size: 60%;
+        margin-bottom: 20%;
+    }
+
+    .totalp{
+        margin-top: 80%;
+    }
+
+    .days{
+        max-width: 21%;
+    }
+
+    .start{
+        margin-top: 75%;
+    }
+
+    .remove{
+        transform: translateX(-70%);
     }
 
     #courseForm {
