@@ -268,7 +268,7 @@ header {
 	}
 }
 
-/* @media (max-width: 768px) {
+@media (max-width: 768px) {
     .container {
         max-width: 90%;
         margin: 20px auto;
@@ -310,6 +310,6 @@ header {
         width: 100%;
         margin-top: 20%;
     }
-} */
+}
 
 
