@@ -198,4 +198,27 @@ footer{
 	}
 }
 
+@media (max-width: 768px) {
+    .container {
+        max-width: 90%;
+        margin: 20px auto;
+        padding: 10px;
+    }
 
+    #courseForm {
+        width: 80%;
+        margin-top: -5%;
+    }
+}
+
+/* Apply responsive styles below 480px screen width */
+@media (max-width: 480px) {
+    .container {
+        max-width: 95%;
+    }
+
+    #courseForm {
+        width: 100%;
+        margin-top: -8%;
+    }
+}
