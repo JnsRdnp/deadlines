@@ -28,12 +28,14 @@
     max-width: 15%;
     min-width: 30px;
     padding: 1%;
+    opacity: 0.80;
 }
 
 #mission{
     position: static;
-    max-width: 22%;
+    max-width: 35%;
     min-width: 30px;
+    opacity: 0.8;
 
 }
 
@@ -175,11 +177,16 @@ body {
     border: 1px solid #ccc;
 }
 
-footer{
-    background-color: #8A9AA4;
-    border: 1px solid grey;
-    padding: 5px;
+footer {
+    background-color: #333; /* Background color */
+    color: #fff; /* Text color */
     text-align: center;
+    padding: 10px 0; /* Add padding to top and bottom for spacing */
+    font-size: 14px; /* Adjust the font size as needed */
+    font-weight: 400; /* Adjust the font weight as desired */
+    text-transform: uppercase; /* Uppercase text */
+    letter-spacing: 1px; /* Adjust letter spacing for spacing between characters */
+    opacity: 0.65;
 }
 
 .innerCont{
@@ -187,9 +194,15 @@ footer{
 
 }
 
-#deadlinesHeader{
+header {
+    background-color: #333; /* Background color */
+    color: #fff; /* Text color */
     text-align: center;
-    font-size: 110%;
+    padding: 20px 0; /* Add padding to top and bottom for spacing */
+    font-size: 24px; /* Adjust the font size as needed */
+    font-weight: 600; /* Adjust the font weight for emphasis */
+    text-transform: uppercase; /* Uppercase text */
+    letter-spacing: 2px; /* Adjust letter spacing for spacing between characters */
 }
 
 

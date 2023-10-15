@@ -54,7 +54,7 @@ class Course {
         var year = currentDate.getFullYear();
         var month = currentDate.getMonth() + 1; // Month index starts from 0
         var day = currentDate.getDate();
-        var dateWithoutTime = day + '.' + month;
+        var dateWithoutTime = day + '.' + month + '.';
         return dateWithoutTime;
       }
 
