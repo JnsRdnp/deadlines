@@ -190,6 +190,9 @@ body {
 }
 
 #courseForm {
+    font-family: "Lucida Console", Monaco, monospace;
+    display: flex;
+    flex-direction: column;
     text-align: center;
     background-color: #f7f7f7;
     border: 1px solid #ccc;
@@ -200,6 +203,8 @@ body {
     width: 20%;
     margin-top: -2%;
     margin-bottom: 3%;
+
+    font-size: 100%;
 }
   #courseForm input[type="text"],
   #courseForm input[type="number"],
@@ -238,6 +243,19 @@ header {
     letter-spacing: 2px; /* Adjust letter spacing for spacing between characters */
 }
 
+#submitInput{
+    background-color: darkcyan;
+    color: white;
+    border-radius: 10px;
+    padding: 10px;
+    border:none;
+    font-weight: 600;
+    margin-top: 2%;
+}
+
+#submitInput:hover{
+    scale: 1.05;
+}
 
 /* animations */
 @keyframes myAnim {
@@ -263,7 +281,7 @@ header {
     }
 }
 
-/* Apply responsive styles below 480px screen width */
+
 @media (max-width: 480px) {
     .container {
         max-width: 95%;
@@ -290,7 +308,7 @@ header {
 
     #courseForm {
         width: 100%;
-        margin-top: -8%;
+        margin-top: 20%;
     }
 }
 
