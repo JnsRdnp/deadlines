@@ -31,9 +31,44 @@
     opacity: 0.70;
 }
 
+/* Tooltip container */
+.tooltip {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+
+/* Tooltip text */
+.tooltip .tooltip-text {
+    visibility: hidden;
+    width: 50%;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    border-radius: 5px;
+    padding: 5px;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+
+    transform: translateX(-65%);
+    transform: translateY(50%);
+    opacity: 0;
+    transition: opacity 0.3s;
+
+    font-size: 45%;
+}
+
+/* Show the tooltip when hovering over the container */
+.tooltip:hover .tooltip-text {
+    visibility: visible;
+    opacity: 0.75;
+}
+
+
 #mission{
     position: static;
-    max-width: 35%;
+    max-width: 31%;
     min-width: 30px;
     opacity: 0.7;
 

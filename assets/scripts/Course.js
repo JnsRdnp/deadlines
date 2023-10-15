@@ -111,12 +111,16 @@ class Course {
             <div class="sbd">
                 <p class="shouldp">${this.getShouldBeDone()}</p>
                 <p class="perdayp">${this.getPerDay().toFixed(1)} / DAY</p>
+                <div class="tooltip">
                 <img src="assets/pictures/finger.png" alt="" id="finger">
+                <span class="tooltip-text">This indicates the number of assignments that should be done by now.</span></div>
             </div>
 
             <div class="total">
                 <p class="totalp">${this._assignments}</p>
+                <div class="tooltip">
                 <img src="assets/pictures/mission.png" alt="" id="mission">
+                <span class="tooltip-text">This is the goal you set</span></div>
             </div>
         </div>
         </div>
