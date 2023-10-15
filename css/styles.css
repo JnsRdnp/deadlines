@@ -49,14 +49,14 @@
 
     border-right: 2px solid black;
 
-    padding-right: 5%;
+    padding-right: 7%;
     padding-left: 5%;
 
     
 }
 
 .sbd,.total{
-    font-size: 250%;
+    font-size: 210%;
     /* background-color: aquamarine; */
     text-align: center;
     display: flex;
@@ -74,6 +74,7 @@
 
 .total{
     min-width: 15%;
+    padding-left: 5%;
 }
 
 .totalp{
