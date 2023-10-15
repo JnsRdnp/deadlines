@@ -107,8 +107,17 @@ class Course {
                 <img src="assets/pictures/arrowdown1.png" alt="arrowdown" class="arrowdown">
                 <div class="end">${this.getEndDate()}</div>
             </div>
-            <div class="sbd"><p class="shouldp">${this.getShouldBeDone()}</p><p class="perdayp">${this.getPerDay().toFixed(1)} / DAY</p></div>
-            <div class="total"><p class="totalp">${this._assignments}</p></div>
+
+            <div class="sbd">
+                <p class="shouldp">${this.getShouldBeDone()}</p>
+                <p class="perdayp">${this.getPerDay().toFixed(1)} / DAY</p>
+                <img src="assets/pictures/finger.png" alt="" id="finger">
+            </div>
+
+            <div class="total">
+                <p class="totalp">${this._assignments}</p>
+                <img src="assets/pictures/mission.png" alt="" id="mission">
+            </div>
         </div>
         </div>
         `;
