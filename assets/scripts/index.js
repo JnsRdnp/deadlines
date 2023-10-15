@@ -7,18 +7,10 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
     const header = document.querySelector('#deadlinesHeader');
 
-    //add date to site header
-    // var currentDate = new Date();
-    // var year = currentDate.getFullYear();
-    // var month = currentDate.getMonth() + 1; // Month index starts from 0
-    // var day = currentDate.getDate();
-    // var dateWithoutTime = day + '/' + month + '/'+ year
-    // header.insertAdjacentHTML('beforeend',' '+dateWithoutTime);
-
     //Example course
     var course = new Course("Example course",10,"2023-08-21","2023-10-15");
-    // exampleCourse.createHtmlElement();
     courseList.push(course);
+
     
     //handle new course object creation
     const form = document.querySelector("#courseForm");
@@ -26,10 +18,13 @@ document.addEventListener("DOMContentLoaded", (event) => {
         //prevent the dissappearing
         event.preventDefault();
 
+        console.log(form.value);
         var courseName = form.inputName.value;
         var courseAssignments = form.inputAssignments.value;
         var courseStartDate = form.startDateInput.value;
         var courseEndDate = form.endDateInput.value;
+
+        alert("New course "+courseName+" created!");
 
         console.log(courseStartDate);
         var course = new Course(courseName,parseInt(courseAssignments, 10),courseStartDate,courseEndDate);
@@ -39,12 +34,32 @@ document.addEventListener("DOMContentLoaded", (event) => {
         //clear form
         console.log(courseList);
         document.querySelector("#courseForm").reset();
+
+        //update local storage courseArray
+        localStorage.setItem('courseList', JSON.stringify(courseList));
     });
     
+    //Get created course objects from local storage
+    const storedCourseList = JSON.parse(localStorage.getItem('courseList'));
+
+    //Create course objects from a local storage courseList array
+    if (storedCourseList) {
+        courseList = storedCourseList.map(courseData => {
+          return new Course(
+            courseData._name,
+            courseData._assignments,
+            courseData._startDate,
+            courseData._endDate
+          );
+        });
+    }
+
     courseList.forEach((course) => {
 
         course.createHtmlElement();
     });
+
+    console.log(storedCourseList);
 
 
     // Handle removing courses
@@ -62,6 +77,8 @@ document.addEventListener("DOMContentLoaded", (event) => {
                     courseList.splice(indexToRemove, 1);
                     courseElement.remove();
                     console.log(courseList);
+                    //update local storage courseArray
+                    localStorage.setItem('courseList', JSON.stringify(courseList));
                 }
             }
         }
