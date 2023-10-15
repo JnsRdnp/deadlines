@@ -98,7 +98,7 @@ class Course {
     createHtmlElement(){
         this._htmlTemplate = `
         <div class="courseOuter" id="${this._name}">
-        <p class="coursetitle">${this._name}</p></label>
+        <p class="coursetitle">${this._name}</p>
         <button class="remove">DELETE</button>
         
         <div class="course">
