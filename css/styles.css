@@ -39,7 +39,7 @@
 
 .days{
     text-align: center;
-    font-size:230%;
+    font-size:170%;
     letter-spacing: 1.4px;
     /* background-color:lightcoral; */
     width: 33%;
@@ -49,8 +49,8 @@
 
     border-right: 2px solid black;
 
-    padding-right: 4%;
-    padding-left: 4%;
+    padding-right: 5%;
+    padding-left: 5%;
 
     
 }
@@ -149,6 +149,10 @@ body {
     scale:0.95;
 }
 
+#startdateInput,#enddateInput{
+    text-align: center;
+}
+
 #courseForm {
     text-align: center;
     background-color: #f7f7f7;
@@ -166,6 +170,7 @@ body {
   #courseForm input[type="date"] {
     width: 100%;
     padding: 8px;
+    margin-bottom: 2%;
     border: 1px solid #ccc;
 }
 
@@ -222,3 +227,5 @@ footer{
         margin-top: -8%;
     }
 }
+
+
