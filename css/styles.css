@@ -21,13 +21,13 @@
 }
 
 a:link {
-    color: green;
+    color: darkblue;
     background-color: transparent;
     text-decoration: none;
   }
   
   a:visited {
-    color: pink;
+    color: lightblue;
     background-color: transparent;
     text-decoration: none;
   }
@@ -41,6 +41,7 @@ a:link {
     min-width: 30px;
     padding: 1%;
     opacity: 0.70;
+    margin-top: -3%;
 }
 
 /* Tooltip container */
@@ -80,29 +81,25 @@ a:link {
 
 #mission{
     position: static;
-    max-width: 31%;
+    max-width: 27%;
     min-width: 30px;
     opacity: 0.7;
-
+    margin-top: -11%;
 }
 
 
 .days{
     text-align: center;
-    font-size:170%;
-    letter-spacing: 1.4px;
+    font-size:130%;
     /* background-color:lightcoral; */
-    width: 33%;
+    max-width: 20%;
     display: flex;
     flex-direction: column;
     align-items: center;
 
-    border-right: 2px solid black;
+    padding: 2%;
 
-    padding-right: 7%;
-    padding-left: 5%;
 
-    
 }
 
 .sbd,.total{
@@ -112,23 +109,30 @@ a:link {
     display: flex;
     flex-direction: column;
     align-items: center;
+    
 }
 .sbd{
     border-right: 2px solid black;
+    border-left: 2px solid black;
+
     min-width: 50%;
 }
 
 .shouldp{
     margin-bottom: -2%;
+    margin-top: 4%;
 }
 
 .total{
-    min-width: 15%;
-    padding-left: 5%;
+    margin: -1% auto;
 }
 
 .totalp{
-    margin-top: 30%;
+    margin-top: 13%;
+}
+
+.perdayp{
+
 }
 
 .perdayp{
@@ -145,7 +149,8 @@ a:link {
 }
 
 .start{
-    margin-top: 40%;
+    margin-top: auto;
+    margin-bottom: auto;
 
 }
 
@@ -196,7 +201,7 @@ body {
 .container {
     max-width: 800px;
     margin: 0 auto;
-    margin-top: 0.5%;
+    margin-top: -1%;
     margin-bottom: 3%;
     padding: 20px;
     background-color: #fff;
@@ -318,11 +323,12 @@ header {
     .container {
         max-width: 95%;
         font-size: 60%;
-        margin-bottom: 20%;
+        margin: auto auto;
     }
 
     .totalp{
-        margin-top: 80%;
+        /* margin-top: 80%; */
+        margin:auto auto;
     }
 
     .total{
@@ -333,7 +339,6 @@ header {
     .days{
         max-width: 15%;
         font-size: 120%;
-        padding-right: 10%;
 
     }
 
