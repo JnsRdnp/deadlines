@@ -20,6 +20,18 @@
     max-height: 30%;
 }
 
+a:link {
+    color: green;
+    background-color: transparent;
+    text-decoration: none;
+  }
+  
+  a:visited {
+    color: pink;
+    background-color: transparent;
+    text-decoration: none;
+  }
+
 .courseOuter{
     animation: myAnim 2s ease 0s 1 normal forwards;
 }
@@ -73,6 +85,7 @@
     opacity: 0.7;
 
 }
+
 
 .days{
     text-align: center;
@@ -170,13 +183,21 @@ body {
     background-color: #f2f2f2;
     margin: 0;
     padding: 0;
-    /* display: flex;
-    flex-direction: column; */
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+#master{
+    display: flex;
+    flex-direction: column;
+    min-width: auto;
 }
 
 .container {
     max-width: 800px;
-    margin: 70 auto;
+    margin: 0 auto;
+    margin-top: 0.5%;
+    margin-bottom: 3%;
     padding: 20px;
     background-color: #fff;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -200,7 +221,7 @@ body {
     padding: 1%;
     margin: 0% auto;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    width: 20%;
+    min-width: 10%;
     margin-top: -2%;
     margin-bottom: 3%;
 
@@ -217,6 +238,9 @@ body {
 
 
 footer {
+
+    width: 100%;
+    margin-top: 3%;
     background-color: #333; /* Background color */
     color: #fff; /* Text color */
     text-align: center;
@@ -238,10 +262,13 @@ header {
     color: #fff; /* Text color */
     text-align: center;
     padding: 20px 0; /* Add padding to top and bottom for spacing */
-    font-size: 24px; /* Adjust the font size as needed */
+    font-size: 21px; /* Adjust the font size as needed */
     font-weight: 600; /* Adjust the font weight for emphasis */
     text-transform: uppercase; /* Uppercase text */
     letter-spacing: 2px; /* Adjust letter spacing for spacing between characters */
+    display: flex;
+    flex-direction: column;
+    width: 100%;
 }
 
 #submitInput{
@@ -284,9 +311,12 @@ header {
 
 
 @media (max-width: 480px) {
+    header{
+        max-width: 100%;
+    }
+
     .container {
         max-width: 95%;
-        scale: 100%;
         font-size: 60%;
         margin-bottom: 20%;
     }
@@ -295,22 +325,54 @@ header {
         margin-top: 80%;
     }
 
+    .total{
+        padding-left: 10%;
+    }
+
+
     .days{
-        max-width: 21%;
+        max-width: 15%;
+        font-size: 120%;
+        padding-right: 10%;
+
+    }
+
+    .perdayp{
+        font-size: 55%;
     }
 
     .start{
         margin-top: 75%;
     }
 
+    .sbd,.total{
+        font-size: 180%;
+    }
+
     .remove{
         transform: translateX(-70%);
     }
 
+    .remove:hover{
+        scale: 1.1;
+        opacity: 0.7;
+    }
+
+    .remove:active{
+        scale: 1.1;
+    }
+
     #courseForm {
-        width: 100%;
+
         margin-top: 20%;
+        margin: 0 auto;
+        scale: 0.90;
+
+        min-width: 100%;
+    }
+
+    .body{
+        overflow-x: hidden;
     }
 }
-
 
