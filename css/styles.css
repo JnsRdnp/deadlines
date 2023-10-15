@@ -203,6 +203,8 @@ body {
     width: 20%;
     margin-top: -2%;
     margin-bottom: 3%;
+
+    font-size: 100%;
 }
   #courseForm input[type="text"],
   #courseForm input[type="number"],
@@ -242,7 +244,7 @@ header {
 }
 
 #submitInput{
-    background-color:lightsteelblue;
+    background-color: darkcyan;
     color: white;
     border-radius: 10px;
     padding: 10px;
