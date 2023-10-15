@@ -17,18 +17,29 @@
 
     display: flex;
     flex-direction: row;
-    max-height: 33%;
+    max-height: 30%;
 }
 
 .courseOuter{
     animation: myAnim 2s ease 0s 1 normal forwards;
 }
 
+#finger{
+    max-width: 15%;
+    min-width: 30px;
+    padding: 1%;
+}
 
+#mission{
+    position: static;
+    max-width: 22%;
+    min-width: 30px;
+
+}
 
 .days{
     text-align: center;
-    font-size:17px;
+    font-size:170%;
     letter-spacing: 1.4px;
     /* background-color:lightcoral; */
     width: 33%;
@@ -36,33 +47,42 @@
     flex-direction: column;
     align-items: center;
 
-    padding-top: 5%;
-    padding-bottom: 3%;
-
     border-right: 2px solid black;
+
+    padding-right: 7%;
+    padding-left: 5%;
+
     
 }
 
 .sbd,.total{
-    font-size: 250%;
+    font-size: 210%;
     /* background-color: aquamarine; */
-    padding: 5%;
     text-align: center;
-
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 .sbd{
     border-right: 2px solid black;
-    min-width: 22%;
+    min-width: 50%;
+}
+
+.shouldp{
+    margin-bottom: -2%;
 }
 
 .total{
-    min-width: 22%;
+    min-width: 15%;
+    padding-left: 5%;
+}
+
+.totalp{
+    margin-top: 30%;
 }
 
 .perdayp{
-    margin-top: -20%;
+
     font-size:50%;
 }
 
@@ -74,9 +94,11 @@
     opacity: 0.6;
 }
 
-.start, .end{
-    font-size: 150%;
+.start{
+    margin-top: 60%;
+
 }
+
 
 .arrowdown{
     display: block;
@@ -119,13 +141,17 @@ body {
 
 .container {
     max-width: 800px;
-    margin: 0 auto;
+    margin: 70 auto;
     padding: 20px;
     background-color: #fff;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
 
-    scale:0.70;
+    scale:0.95;
+}
+
+#startdateInput,#enddateInput{
+    text-align: center;
 }
 
 #courseForm {
@@ -145,6 +171,7 @@ body {
   #courseForm input[type="date"] {
     width: 100%;
     padding: 8px;
+    margin-bottom: 2%;
     border: 1px solid #ccc;
 }
 
@@ -175,6 +202,31 @@ footer{
 	100% {
 		transform: scale(1);
 	}
+}
+
+@media (max-width: 768px) {
+    .container {
+        max-width: 90%;
+        margin: 20px auto;
+        padding: 10px;
+    }
+
+    #courseForm {
+        width: 80%;
+        margin-top: -5%;
+    }
+}
+
+/* Apply responsive styles below 480px screen width */
+@media (max-width: 480px) {
+    .container {
+        max-width: 95%;
+    }
+
+    #courseForm {
+        width: 100%;
+        margin-top: -8%;
+    }
 }
 
 
