@@ -24,8 +24,6 @@ document.addEventListener("DOMContentLoaded", (event) => {
         var courseStartDate = form.startDateInput.value;
         var courseEndDate = form.endDateInput.value;
 
-        alert("New course "+courseName+" created!");
-
         console.log(courseStartDate);
         var course = new Course(courseName,parseInt(courseAssignments, 10),courseStartDate,courseEndDate);
         course.createHtmlElement();
