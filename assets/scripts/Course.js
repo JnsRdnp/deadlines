@@ -2,96 +2,96 @@ class Course {
 
     constructor(name,assignments,startdate,enddate) {
         this._name = name;
-        this._startDate = new Date(startdate);
-        this._endDate = new Date(enddate);
-        this._today = new Date();
+        this._startDate = new Date(startdate)
+        this._endDate = new Date(enddate)
+        this._today = new Date()
 
 
-        this._assignments = assignments;
+        this._assignments = assignments
 
     }
 
     setCourseName(name){
-        this._name = name;
+        this._name = name
     }
 
     setAssignments(assignments){
-        this._assignments = assignments;
+        this._assignments = assignments
     }
 
     setStartDate(newStartDate){
         // this.startDate = new Date(newStartDate)
-        this._startDate = new Date(newStartDate);
+        this._startDate = new Date(newStartDate)
     }
 
     setEndDate(newEndDate){
         // this.startDate = new Date(newStartDate)
-        this._endDate = new Date(newEndDate);
+        this._endDate = new Date(newEndDate)
     }
 
     getName(){
-        return this._name;
+        return this._name
     }
 
     getAssignments(){
-        return this._assignments;
+        return this._assignments
     }
 
     getStartDate(){
-        return this.getSimpleDate(this._startDate);
+        return this.getSimpleDate(this._startDate)
     }
 
     getEndDate(){
-        return this.getSimpleDate(this._endDate);
+        return this.getSimpleDate(this._endDate)
     }
 
     getToday(){
-        return this.getSimpleDate(this._today);
+        return this.getSimpleDate(this._today)
     }
 
     getSimpleDate(inputDate) {
-        var currentDate = inputDate;
-        var year = currentDate.getFullYear();
-        var month = currentDate.getMonth() + 1; // Month index starts from 0
-        var day = currentDate.getDate();
-        var dateWithoutTime = day + '.' + month + '.';
-        return dateWithoutTime;
+        var currentDate = inputDate
+        var year = currentDate.getFullYear()
+        var month = currentDate.getMonth() + 1 // Month index starts from 0
+        var day = currentDate.getDate()
+        var dateWithoutTime = day + '.' + month + '.'
+        return dateWithoutTime
       }
 
     getOriginalDays(){
-        return (this.dateDiffInDays(this._startDate,this._endDate));
+        return (this.dateDiffInDays(this._startDate,this._endDate))
     }
 
     getPassedDays(){
-        return (this.dateDiffInDays(this._startDate,this._today));
+        return (this.dateDiffInDays(this._startDate,this._today))
     }
 
 
     getPerDay(){
-        var assignments = this.getAssignments();
-        var originalDays = this.getOriginalDays();
+        var assignments = this.getAssignments()
+        var originalDays = this.getOriginalDays()
         var perday = assignments/originalDays; 
-        return perday;
+        return perday
     }
 
     getShouldBeDone(){
-        var passed = this.getPassedDays();
-        var perday = this.getPerDay();
+        var passed = this.getPassedDays()
+        var perday = this.getPerDay()
         if(passed>0){
-            return (passed*perday).toFixed(1);
+            return (passed*perday).toFixed(1)
         }
-        return "0";
+        return "0"
     }
 
     //calculate day difference between dates https://stackoverflow.com/questions/3224834/get-difference-between-2-dates-in-javascript
     dateDiffInDays(a, b) {
         
-        const _MS_PER_DAY = 1000 * 60 * 60 * 24;
+        const _MS_PER_DAY = 1000 * 60 * 60 * 24
         // Discard the time and time-zone information.
-        const utc1 = Date.UTC(a.getFullYear(), a.getMonth(), a.getDate());
-        const utc2 = Date.UTC(b.getFullYear(), b.getMonth(), b.getDate());
+        const utc1 = Date.UTC(a.getFullYear(), a.getMonth(), a.getDate())
+        const utc2 = Date.UTC(b.getFullYear(), b.getMonth(), b.getDate())
       
-        return Math.floor((utc2 - utc1) / _MS_PER_DAY);
+        return Math.floor((utc2 - utc1) / _MS_PER_DAY)
     }
 
     
@@ -125,8 +125,8 @@ class Course {
         </div>
         </div>
         `;
-        var courseContainer = document.getElementById("courseContainer");
-        courseContainer.insertAdjacentHTML('beforeend',this._htmlTemplate);
+        var courseContainer = document.getElementById("courseContainer")
+        courseContainer.insertAdjacentHTML('beforeend',this._htmlTemplate)
 
     }
 
