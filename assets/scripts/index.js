@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
     const header = document.querySelector('#deadlinesHeader');
 
     //Example course
-    var course = new Course("Example course",10,"2023-08-21","2023-10-15");
+    var course = new Course("Example course",87,"2023-08-21","2023-12-15");
     courseList.push(course);
 
     
@@ -60,25 +60,28 @@ document.addEventListener("DOMContentLoaded", (event) => {
     console.log(storedCourseList);
 
 
-    // Handle removing courses
+    // Handle removing deadlines
     document.getElementById("courseContainer").addEventListener("click", function (event) {
         if (event.target.classList.contains("remove")) {
-            // Get the parent course element
-            const courseElement = event.target.closest(".courseOuter");
-            if (courseElement) {
-                const courseId = courseElement.id;
-                console.log("Deleted course with ID: " + courseId);
-    
-                const indexToRemove = courseList.findIndex(course => course._name === courseId);
-                
-                if (indexToRemove !== -1) {
-                    courseList.splice(indexToRemove, 1);
-                    courseElement.remove();
-                    console.log(courseList);
-                    //update local storage courseArray
-                    localStorage.setItem('courseList', JSON.stringify(courseList));
+            //Confirming alert to delete deadline
+            if (confirm("Are you sure you want to delete the deadline?")){
+                const courseElement = event.target.closest(".courseOuter");
+                if (courseElement) {
+                    const courseId = courseElement.id;
+                    console.log("Deleted course with ID: " + courseId);
+        
+                    const indexToRemove = courseList.findIndex(course => course._name === courseId);
+                    
+                    if (indexToRemove !== -1) {
+                        courseList.splice(indexToRemove, 1);
+                        courseElement.remove();
+                        console.log(courseList);
+                        //update local storage courseArray
+                        localStorage.setItem('courseList', JSON.stringify(courseList));
+                    }
                 }
             }
+
         }
     });
   

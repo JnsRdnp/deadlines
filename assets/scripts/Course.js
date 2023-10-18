@@ -113,7 +113,7 @@ class Course {
                 <p class="perdayp">${this.getPerDay().toFixed(1)} / DAY</p>
                 <div class="tooltip">
                 <img src="assets/pictures/finger.png" alt="" id="finger">
-                <span class="tooltip-text">This indicates the number of assignments that should be done by now.</span></div>
+                <span class="tooltip-text">This indicates the number of assignments that should be done by now</span></div>
             </div>
 
             <div class="total">
