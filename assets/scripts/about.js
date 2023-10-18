@@ -3,7 +3,10 @@ document.addEventListener("DOMContentLoaded", (event) => {
     console.log("About.html content loaded")
 
     getGithubReadMe().then(respo=>{
+        console.log("Github read me fetched succesfully! It is now shown as part of the About-page")
         inputToHtmlElement('fromGithub',respo)
+
+
     }).catch(error =>{
         inputToHtmlElement('fromGithub','Failed to fetch Github readme :(')
     })

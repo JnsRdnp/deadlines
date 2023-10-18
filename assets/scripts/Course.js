@@ -70,15 +70,21 @@ class Course {
     getPerDay(){
         var assignments = this.getAssignments()
         var originalDays = this.getOriginalDays()
-        var perday = assignments/originalDays; 
+        var perday = assignments/originalDays;
+
         return perday
+
     }
 
     getShouldBeDone(){
         var passed = this.getPassedDays()
         var perday = this.getPerDay()
-        if(passed>0){
-            return (passed*perday).toFixed(1)
+        var shouldbedone = (passed*perday).toFixed(1)
+
+        if(passed>0 && passed<=this._assignments){
+            return shouldbedone
+        } else if(shouldbedone>this._assignments){
+            return (this._assignments) + (" (deadline expired)")
         }
         return "0"
     }

@@ -4,7 +4,7 @@ header {
     color: #333; /* Text color */
     text-align: center;
     padding: 20px 0;
-    font-family: Arial, sans-serif;
+    font-family: "Lucida Console", Monaco, monospace;
 }
 
 .header-content {
