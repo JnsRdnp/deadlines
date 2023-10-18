@@ -5,14 +5,66 @@ var courseList = [];
 document.addEventListener("DOMContentLoaded", (event) => {
     console.log("DOM fully loaded and parsed")
 
-    const header = document.querySelector('#deadlinesHeader')
+    createExampleCourse()
 
-    //Example course
-    var course = new Course("Example course",87,"2023-08-21","2023-12-15")
-    courseList.push(course)
+    createCourseHandler()
+    
+    //Get created course objects from local storage
+    const storedCourseList = JSON.parse(localStorage.getItem('courseList'))
+
+    //Create saved course objects from a local storage courseList array
+    if (storedCourseList) {
+        courseList = storedCourseList.map(courseData => {
+          return new Course(
+            courseData._name,
+            courseData._assignments,
+            courseData._startDate,
+            courseData._endDate
+          );
+        });
+    }
+
+    courseList.forEach((course) => {
+
+        course.createHtmlElement()
+    });
+
+    console.log("Storedcourses: ",storedCourseList)
+
+    removeDeadlineHandler()
+  
+  });
+
+
+function addDays(date, days) {
+    var result = new Date(date);
+    result.setDate(result.getDate() + days);
+    return result;
+}
+
+
+//this helps to create artificial example course date
+function simpledate(date){
+    var year = date.getFullYear()
+    var month = date.getMonth() + 1 // Month index starts from 0
+    var day = date.getDate()
+    return year + '/' + month + '/' +day
+}
+
+//This creates and example course for a user with deadlines that starts from today-20 days and ends in today+20 days
+function createExampleCourse(){
+    const todayForExample = new Date()
+    const artifistartSimple = simpledate(addDays(todayForExample,-20))
+    const artifiendSimple = simpledate(addDays(todayForExample,+20))
 
     
-    //handle new course object creation
+    var course = new Course("Java Course (EXAMPLE DEADLINE)",87,artifistartSimple,artifiendSimple)
+    courseList.push(course)
+}
+
+
+//This handles the new course creation from form
+function createCourseHandler(){
     const form = document.querySelector("#courseForm")
     form.addEventListener("submit", function (event) {
         //prevent the dissappearing
@@ -36,31 +88,10 @@ document.addEventListener("DOMContentLoaded", (event) => {
         //update local storage courseArray
         localStorage.setItem('courseList', JSON.stringify(courseList))
     });
-    
-    //Get created course objects from local storage
-    const storedCourseList = JSON.parse(localStorage.getItem('courseList'))
+}
 
-    //Create course objects from a local storage courseList array
-    if (storedCourseList) {
-        courseList = storedCourseList.map(courseData => {
-          return new Course(
-            courseData._name,
-            courseData._assignments,
-            courseData._startDate,
-            courseData._endDate
-          );
-        });
-    }
-
-    courseList.forEach((course) => {
-
-        course.createHtmlElement()
-    });
-
-    console.log(storedCourseList)
-
-
-    // Handle removing deadlines
+function removeDeadlineHandler(){
+    //Handle removing deadlines
     document.getElementById("courseContainer").addEventListener("click", function (event) {
         if (event.target.classList.contains("remove")) {
             //Confirming alert to delete deadline
@@ -84,7 +115,4 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
         }
     });
-  
-  });
-
-
+}
