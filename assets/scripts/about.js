@@ -2,11 +2,11 @@
 document.addEventListener("DOMContentLoaded", (event) => {
     console.log("About.html content loaded")
 
+    // setTimeout(alert("Did you fall asleep?"),10000);
+
     getGithubReadMe().then(respo=>{
-        console.log("Github read me fetched succesfully! It is now shown as part of the About-page")
+        console.log("Github readme fetched succesfully! It is now shown as part of the About-page")
         inputToHtmlElement('fromGithub',respo)
-
-
     }).catch(error =>{
         inputToHtmlElement('fromGithub','Failed to fetch Github readme :(')
     })
