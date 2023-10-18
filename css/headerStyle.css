@@ -31,7 +31,10 @@ header {
 #hdrabout{
     text-align: center;
     font-size: 90%;
+}
 
+#hdrabout:hover{
+    text-decoration: underline;
 }
 
 
