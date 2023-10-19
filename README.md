@@ -1,6 +1,6 @@
 "Deadlines" calculates how many assignments you need to tackle each day to stay on track and shows you 
 how many assignments you should have completed by now, so you know you are not falling behind.
-##[Deadlines-site](https://jnsrdnp.github.io/deadlines/)
+## [Deadlines-site](https://jnsrdnp.github.io/deadlines/)
 ## Project Assessment Criteria
 
 ### HTML (25%)
