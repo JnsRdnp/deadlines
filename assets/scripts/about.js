@@ -1,8 +1,10 @@
+
+
+
+
 // Wait for the DOM to be fully loaded
 document.addEventListener("DOMContentLoaded", (event) => {
     console.log("About.html content loaded")
-
-    // setTimeout(alert("Did you fall asleep?"),10000);
 
     getGithubReadMe().then(respo=>{
         console.log("Github readme fetched succesfully! It is now shown as part of the About-page")
@@ -10,6 +12,9 @@ document.addEventListener("DOMContentLoaded", (event) => {
     }).catch(error =>{
         inputToHtmlElement('fromGithub','Failed to fetch Github readme :(')
     })
+
+    //10 minute timer to fill the timer requirement
+    alerttimer()
 });
 
 
@@ -18,7 +23,8 @@ async function getGithubReadMe(){
     // .then(response => response.text())
     // .then(result => {
     //     console.log(result) // Log the fetched content
-    // });  !!!This is here to remind me about the other way to do this
+    // });  
+    //!!!This is here to remind me about the other way to do this
 
     try{
         const fetchedReadme = await fetch('https://raw.githubusercontent.com/JnsRdnp/deadlines/main/README.md')
@@ -35,3 +41,15 @@ async function inputToHtmlElement(elementid,text){
     element.innerHTML = text
 }
 
+
+//10 minute timer to fill the timer requirement
+const timeoutTime = 60000; // 1 minute
+let timerTimeout
+
+function alerttimer() {
+    clearTimeout(timerTimeout)
+    timerTimeout = setTimeout(doOnTimeout, timeoutTime)
+}
+function doOnTimeout(){
+    alert("1 minute has passed since you opened the about page!")
+}
