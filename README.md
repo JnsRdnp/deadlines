@@ -39,23 +39,31 @@ Strong Grasp of Styling: Demonstrate a strong grasp of layout principles, aesthe
 ### JavaScript Basics (25%)
 Simple interactions (like alerts on button click).
 - Buttons to create and remove course objects
+
 Multiple event listeners and basic DOM manipulations.
 - Course objects are dynamically created
+
 Use of arrays, objects, and functions.
 - These are used to control and create course/deadline objects
+
 Advanced logic, looping through data, and dynamic DOM updates.
 - Used with the course/deadline class and index
+
 Consistent use of Object-Oriented JavaScript principles.
 - Course class
 
 ### Asynchronous Operations (25%)
 Use of Timers: Employ timers to manage time-related operations.
 - About page has 1 minute timer then it alerts
+
 AJAX or Fetch: Successfully implement an AJAX call or Fetch for data retrieval.
 - About page fetches text from the github readme trough internet
+
 Display Asynchronous Data: Ensure data from asynchronous calls is displayed on the webpage.
 - Used with the previous
+
 Error Handling: Implement error handling for failed API calls or other issues.
 - Used with the previous
+
 Enhanced User Experience: Use asynchronous data to enhance user experience through features like filtering and sorting.
 - Github fetch is parsed to only have text from readme before the first '#' character
