@@ -26,11 +26,15 @@ async function getGithubReadMe(){
     // });  
     //!!!This is here to remind me about the other way to do this
 
-    try{
+    try {
         const fetchedReadme = await fetch('https://raw.githubusercontent.com/JnsRdnp/deadlines/main/README.md')
         const readMeToText = await fetchedReadme.text()
-        return readMeToText
-    } catch(err){
+
+        // Parse the github text before the first '#' character
+        const readMeToTextParsed = readMeToText.substring(0, readMeToText.indexOf('#'))
+
+        return readMeToTextParsed
+    } catch (err) {
         throw err
     }
 }
