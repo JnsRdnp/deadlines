@@ -47,8 +47,10 @@ document.addEventListener("DOMContentLoaded", (event) => {
     toggleFormButton.addEventListener('click', () => {
     if (isFormVisible) {
         courseForm.style.display = 'none'; // Hide the form
+        toggleFormButton.innerHTML = "+"
     } else {
         courseForm.style.display = 'block'; // Show the form
+        toggleFormButton.innerHTML = "-"
     }
     isFormVisible = !isFormVisible; // Toggle the state
     });
