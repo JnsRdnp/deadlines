@@ -1,10 +1,11 @@
 /* Header Styles */
 header {
     background: none; /* Remove background color */
-    color: #333; /* Text color */
+    color: #eeeeee; /* Text color */
     text-align: center;
     padding: 20px 0;
     font-family: "Lucida Console", Monaco, monospace;
+
 }
 
 .header-content {
@@ -17,13 +18,18 @@ header {
     font-size: 200%;
     font-weight: 700;
     margin: 0;
+    /* outline-style: solid;
+    border-radius: 12px;
+    outline-width: 3px;
+    outline-offset: 5px;
+    margin-bottom: 1%; */
 }
 
 .site-subtitle {
     font-size: 90%;
     opacity: 0.7;
     margin: 0.5%;
-    color: #666; /* Updated subtitle color */
+    color: lightgrey; /* Updated subtitle color */
     text-decoration: underline;
     margin-bottom: 1%;
 }

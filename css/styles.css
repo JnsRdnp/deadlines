@@ -1,3 +1,5 @@
+
+
 .course {
     background-color: #f7f7f7;
     border: 1px solid #ccc;
@@ -15,9 +17,30 @@
     font-variant: normal;
     text-transform: none;
 
+
+
     display: flex;
     flex-direction: row;
     max-height: 30%;
+}
+
+.course:hover{
+
+    scale: 1.01;
+}
+
+#toggleFormButton{
+    padding: 17;
+    border-radius: 10px;
+    margin: 2% auto;
+    font-size: 150%;
+    margin-top: -0.5%;
+
+}
+
+#toggleFormButton:hover{
+    scale: 1.05;
+    opacity: 0.9;
 }
 
 a:link {
@@ -185,7 +208,7 @@ a:link {
 
 body {
     font-family: "Lucida Console", Monaco, monospace;
-    background-color: #f2f2f2;
+    background: linear-gradient(112.1deg, rgb(32, 38, 57) 11.4%, rgb(63, 76, 119) 70.2%);
     margin: 0;
     padding: 0;
     overflow-y: scroll;
@@ -200,15 +223,21 @@ body {
 
 .container {
     max-width: 800px;
+    
     margin: 0 auto;
-    margin-top: 1%;
-    margin-bottom: 3%;
+
     padding: 20px;
-    background-color: #fff;
+    background-color: #393e46;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
+    color: white;
 
-    scale:0.95;
+    box-shadow: 0 8px 12px 0 rgba(255, 255, 255, 0.2); /* Increase blur and spread radius */
+    border-radius: 10px;
+    color: white;
+
+    scale:0.85;
+    /* width: 33%; */
 }
 
 #startdateInput,#enddateInput{
@@ -227,10 +256,12 @@ body {
     margin: 0% auto;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     min-width: 10%;
-    margin-top: -2%;
     margin-bottom: 3%;
-
+    margin-top: -2%;
+    width: 20%;
     font-size: 100%;
+
+    
 }
   #courseForm input[type="text"],
   #courseForm input[type="number"],
@@ -359,12 +390,13 @@ header {
     }
 
     .remove:hover{
-        scale: 1.1;
+        scale: 2;
         opacity: 0.7;
     }
 
     .remove:active{
-        scale: 1.1;
+        scale: 2;
+        opacity: 0.7;
     }
 
     #courseForm {
