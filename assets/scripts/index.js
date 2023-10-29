@@ -36,6 +36,23 @@ document.addEventListener("DOMContentLoaded", (event) => {
   });
 
 
+    //show deadlineform button setup
+    const courseForm = document.getElementById('courseForm');
+    const toggleFormButton = document.getElementById('toggleFormButton');
+
+    // Set the initial state to hidden
+    let isFormVisible = false;
+    courseForm.style.display = 'none';
+
+    toggleFormButton.addEventListener('click', () => {
+    if (isFormVisible) {
+        courseForm.style.display = 'none'; // Hide the form
+    } else {
+        courseForm.style.display = 'block'; // Show the form
+    }
+    isFormVisible = !isFormVisible; // Toggle the state
+    });
+
 function addDays(date, days) {
     var result = new Date(date);
     result.setDate(result.getDate() + days);
